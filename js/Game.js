@@ -19,6 +19,7 @@ class Game {
 		
 		this.resetGame();
 		
+		document.querySelector('.main-container').style.backgroundColor = this.bgColor();//randomly sets the background to a different color every game
 		document.querySelector('#overlay').style.display = 'none';//hides the overlay
 				
 		this.activePhrase = this.getRandomPhrase();//gets a new Phrase object
@@ -51,6 +52,17 @@ class Game {
 		//resets the missed score
 		this.missed = 0;
 		
+	}
+	
+	//randomly sets the background to a different color
+	bgColor () {
+		const r = Math.floor(Math.random() * Math.floor(255));//a random red value
+		const g = Math.floor(Math.random() * Math.floor(255));//a random green value
+		const b = Math.floor(Math.random() * Math.floor(255));//a randome blue value
+		console.log(r);
+		console.log(g);
+		console.log(b);
+		return 'rgb(' + r+ ' ' + g + ' ' + b + ')';
 	}
 	
 	//gets a random phrase to display
